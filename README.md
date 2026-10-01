@@ -49,3 +49,28 @@ NIP, NIK, nama pegawai, atau data pribadi di dalam repositori.
 Repositori ini hanya memuat kode, skema, migrasi, dan dokumentasi. Berkas data
 pribadi, data produksi, file CSV, workbook, grafik, arsip, serta kredensial
 harus tetap berada di luar repositori dan sudah diabaikan oleh `.gitignore`.
+
+## Prototype aplikasi SDM
+
+Folder `Backend_SDM_Test/` dan `Frontend_SDM_Test/` membentuk prototype aplikasi
+Merit System Personel Polri:
+
+- **Dashboard visualisasi data personel** — status personel, jenjang pendidikan,
+  personel pernah diklat, personel dengan riwayat mutasi, lama dinas, dan
+  proyeksi personel mendekati pensiun.
+- **Data Personel** — daftar berbasis scope, pencarian, pagination, tambah, dan
+  update data personel.
+- **Profil Personel** — satu drawer dengan tab Ringkasan, Riwayat Jabatan, serta
+  Pendidikan & Diklat.
+- **Riwayat Jabatan** — timeline kronologis dengan tambah, edit, hapus, Satker,
+  fungsi, nivelering, status, dan tanggal penugasan.
+- **Pendidikan & Diklat** — input terpisah untuk pendidikan dan diklat; data
+  dibaca melalui backend dan mengikuti validasi serta scope.
+- **Administrasi Scope Organisasi** — admin menetapkan Satker yang dapat diakses
+  operator.
+- **Authentication dan akses** — login JWT, role, scope organisasi, audit, dan
+  ganti password.
+
+Aturan identitas pada form: hanya jenis personel yang dipilih; POLRI otomatis
+menggunakan NRP, sedangkan ASN/PPPK/HONORER/LAINNYA otomatis menggunakan NIP.
+Detail instalasi dan endpoint ada di README masing-masing subproyek.
