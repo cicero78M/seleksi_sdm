@@ -68,6 +68,9 @@ Merit System Personel Polri:
   dibaca melalui backend dan mengikuti validasi serta scope.
 - **Administrasi Scope Organisasi** — admin menetapkan Satker yang dapat diakses
   operator.
+- **Administrasi Akses** — admin pertama melihat registrasi pending, menyetujui atau
+  menolak pendaftaran, menetapkan role, dan melihat riwayat persetujuan. Approval
+  tetap dibatasi backend hanya untuk role `admin` pertama.
 - **Authentication dan akses** — login JWT, role, scope organisasi, audit, dan
   ganti password.
 
