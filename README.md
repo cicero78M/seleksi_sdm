@@ -56,8 +56,8 @@ Folder `Backend_SDM_Test/` dan `Frontend_SDM_Test/` membentuk prototype aplikasi
 Merit System Personel Polri:
 
 - **Dashboard visualisasi data personel** — status personel, jenjang pendidikan,
-  personel pernah diklat, personel dengan riwayat mutasi, lama dinas, dan
-  proyeksi personel mendekati pensiun.
+  kelompok jabatan/nivelering, kelompok usia, personel pernah diklat, personel
+  dengan riwayat mutasi, lama dinas, dan proyeksi personel mendekati pensiun.
 - **Data Personel** — daftar berbasis scope, pencarian, pagination, tambah, dan
   update data personel.
 - **Profil Personel** — satu drawer dengan tab Ringkasan, Riwayat Jabatan, serta
