@@ -55,7 +55,7 @@ harus tetap berada di luar repositori dan sudah diabaikan oleh `.gitignore`.
 Folder `Backend_SDM_Test/` dan `Frontend_SDM_Test/` membentuk prototype aplikasi
 Merit System Personel Polri:
 
-- **Dashboard visualisasi data personel** — status personel, jenjang pendidikan,
+- **Dashboard visualisasi data personel** — status personel, golongan/pangkat, jenjang pendidikan,
   kelompok jabatan/nivelering, kelompok usia, personel pernah diklat, personel
   dengan riwayat mutasi, lama dinas, dan proyeksi personel mendekati pensiun.
 - **Data Personel** — daftar berbasis scope, pencarian, pagination, tambah, dan
