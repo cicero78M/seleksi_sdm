@@ -63,7 +63,8 @@ Merit System Personel Polri:
 - **Profil Personel** — satu drawer dengan tab Ringkasan, Riwayat Jabatan, serta
   Pendidikan & Diklat.
 - **Riwayat Jabatan** — timeline kronologis dengan tambah, edit, hapus, Satker,
-  fungsi, nivelering, status, dan tanggal penugasan.
+  Unsur Pembantu Pimpinan, jabatan berbasis unit, nivelering, status, dan tanggal
+  penugasan. Untuk operator Polres, Satker otomatis mengikuti Satker personel.
 - **Pendidikan & Diklat** — input terpisah untuk pendidikan dan diklat; data
   dibaca melalui backend dan mengikuti validasi serta scope.
 - **Administrasi Scope Organisasi** — admin menetapkan Satker yang dapat diakses
@@ -73,6 +74,11 @@ Merit System Personel Polri:
   tetap dibatasi backend hanya untuk role `admin` pertama.
 - **Authentication dan akses** — login JWT, role, scope organisasi, audit, dan
   ganti password.
+
+Aturan penempatan riwayat jabatan mengikuti struktur pada **Update Data**:
+`BAG*`, `SAT*`, `SI*`, dan `POLSEK` beserta parent sampai unit terkecil.
+Jabatan hanya dimuat setelah unit dipilih dan harus memiliki mapping aktif pada
+unit tersebut; mapping `legacy-assignment` ditolak oleh backend.
 
 Aturan identitas pada form: hanya jenis personel yang dipilih; POLRI otomatis
 menggunakan NRP, sedangkan ASN/PPPK/HONORER/LAINNYA otomatis menggunakan NIP.
