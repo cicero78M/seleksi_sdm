@@ -8,6 +8,9 @@ data pegawai asli, CSV, workbook, dan hasil grafik tidak disimpan di repositori.
 
 - `schema.sql` — definisi tabel utama.
 - `db/migrations/001_init.sql` — migrasi awal basis data.
+- `01_buat_staging_pegawai_bersih.sql` — membuat tabel staging yang bersih.
+- `02_daftar_temuan_staging.sql` — mencatat temuan atau masalah data.
+- `03_log_perubahan_staging.sql` — mencatat perubahan pada data staging.
 - `04_mutasi_pertama_personil.sql` — laporan mutasi personel.
 - `05_pegawai_belum_pernah_diklat.sql` — mencari pegawai yang belum pernah mengikuti diklat.
 - `buat_laporan_excel.js` — skrip pembuatan laporan Excel dari sumber data lokal.
@@ -28,6 +31,7 @@ Contoh dengan `psql`:
 
 ```bash
 psql -d nama_database -f schema.sql
+psql -d nama_database -f 01_buat_staging_pegawai_bersih.sql
 ```
 
 ## Menjalankan skrip laporan
@@ -70,11 +74,6 @@ Merit System Personel Polri:
   tetap dibatasi backend hanya untuk role `admin` pertama.
 - **Authentication dan akses** — login JWT, role, scope organisasi, audit, dan
   ganti password.
-
-Kebutuhan seleksi mencakup identitas personel, unit dan Satker, jabatan aktif
-serta riwayat karier, pendidikan, diklat, pangkat/golongan, masa dinas,
-assessment merit, indikator penilaian, periode seleksi, kewenangan berbasis
-scope, dan audit setiap perubahan atau keputusan.
 
 Aturan penempatan riwayat jabatan mengikuti struktur pada **Update Data**:
 `BAG*`, `SAT*`, `SI*`, dan `POLSEK` beserta parent sampai unit terkecil.
