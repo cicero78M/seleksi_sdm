@@ -1,0 +1,22 @@
+[Unit]
+Description=SDM Merit REST Backend
+After=network-online.target postgresql@14-main.service redis-server.service
+Wants=network-online.target
+StartLimitIntervalSec=60
+StartLimitBurst=10
+
+[Service]
+Type=simple
+User=cicero
+WorkingDirectory=/home/cicero/.openclaw/workspace/Backend_SDM_Test
+EnvironmentFile=/home/cicero/.openclaw/workspace/Backend_SDM_Test/.env
+Environment=PORT=3000
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node /home/cicero/.openclaw/workspace/Backend_SDM_Test/src/server.js
+Restart=always
+RestartSec=5
+TimeoutStopSec=30
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target

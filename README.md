@@ -52,6 +52,8 @@ harus tetap berada di luar repositori dan sudah diabaikan oleh `.gitignore`.
 
 ## Prototype aplikasi SDM
 
+Dokumentasi backend RAG dan jalur LiteLLM ada di [Backend_SDM_RAG/README.md](Backend_SDM_RAG/README.md). Backend tersebut memakai alias LiteLLM `copilot-rag` yang diarahkan ke model GitHub Copilot terkonfigurasi; embedding RAG tetap lokal dengan Transformers.js.
+
 Folder `Backend_SDM_Test/` dan `Frontend_SDM_Test/` membentuk prototype aplikasi
 Merit System Personel Polri:
 
@@ -72,8 +74,25 @@ Merit System Personel Polri:
 - **Administrasi Akses** — admin pertama melihat registrasi pending, menyetujui atau
   menolak pendaftaran, menetapkan role, dan melihat riwayat persetujuan. Approval
   tetap dibatasi backend hanya untuk role `admin` pertama.
+- **Navigasi akun** — menu utama berurutan Visualisasi Data, Data Personel, Profil
+  Saya, Scope Organisasi (admin), dan Log Aktivitas. Ganti password tersedia di
+  halaman Profil Saya, sedangkan Log Aktivitas memiliki filter responsif.
 - **Authentication dan akses** — login JWT, role, scope organisasi, audit, dan
   ganti password.
+
+### Kredensial demo
+
+Akun berikut dibuat oleh seed `Backend_SDM_Test/db/seed/demo_merit_system.sql`.
+Gunakan hanya pada lingkungan demo/non-produksi:
+
+| Role | Username | Password |
+|---|---|---|
+| Admin SSDM | `demo_admin_ssdm` | `Demo-Admin-2026!` |
+| Operator Polda | `demo_operator_polda` | `Demo-Operator-2026!` |
+| Operator Satker | `demo_operator_satker` | `Demo-Operator-2026!` |
+
+Jalankan seed demo dari direktori backend dengan `psql "$DATABASE_URL" -f db/seed/demo_merit_system.sql`.
+Jangan gunakan atau menyebarkan kredensial ini pada lingkungan produksi.
 
 Aturan penempatan riwayat jabatan mengikuti struktur pada **Update Data**:
 `BAG*`, `SAT*`, `SI*`, dan `POLSEK` beserta parent sampai unit terkecil.
